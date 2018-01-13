@@ -4,7 +4,7 @@
   "description": "Elementary data structures in Solidity for Ethereum Smart Contracts.",
   "main": "test.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "truffle test"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
     "url": "https://github.com/aunyks/vitruvius/issues"
   },
   "homepage": "https://github.com/aunyks/vitruvius#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "truffle": "^4.0.4"
   }
 }
