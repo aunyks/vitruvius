@@ -4,19 +4,19 @@ Elementary data structures in Solidity for Ethereum Smart Contracts.
 ### What is it?
 Vitruvius is an integration-tested Solidity library that implements fundamental data structures in computing such as Linked Lists, Stacks, Heaps, Queues, etc. 
 
-### Why Vitruvius?
-Vitruvius exists, because smart contract development is hard. In addition to this, languages such as Solidity and the blockchains on which the code runs are very nascent. Because of this, Vitruvius aims to provide developers with safe, intuitive interfaces to add data structures to their contracts.  
+### Why this?
+The library exists, because smart contract development is hard. In addition to this, languages such as Solidity and the blockchains on which the code runs are very nascent. Because of this, Vitruvius aims to provide developers with safe, intuitive interfaces to add data structures to their contracts.  
 
 Also, Vitruvius contracts can serve as proof-of-concepts for data structures in Solidity.
 
-### Why not Vitruvius?
-Because these data structures are naturally complex, they're also naturally expensive, as more gas is required to operate on the structures. Therefore, it's extremely important to consider the cost of including these contracts in your decentralized application.
+### Why not this?
+Because these data structures are naturally complex, they're also naturally expensive, as more gas is required to operate on the structures. Therefore, it's extremely important to consider the cost of operating these contracts when including them in your decentralized application.
 
-### Who uses Vitruvius?
+### Who uses it?
 Nobody that [I](http://aunyks.com) know of uses Vitruvius at the moment. But, if you ever use Vitruvius contracts please let me know so that I can link to the project in place of this text!
 
 ### Why the name?
-The Vitruvius library is named after Marcus *Vitruvius* Pollio, a Roman architect. He was one of the few who made structures, before they were cool. And, in a similar manner, this library aims to serve as an early foundation and/or reference for implementing data structures in Solidity.
+The Vitruvius library is named after Marcus <ul>Vitruvius</ul> Pollio, a Roman architect. He was one of the few who made structures, before they were cool. And, in a similar manner, this library aims to serve as an early foundation and/or reference for implementing data structures in Solidity.
 
 ### Donate
 **0x037c241Baf5Ba2fa395db0Befac185e4E6b6608f**
