@@ -1,3 +1,24 @@
+# Vitruvius
+## Elementary data structures in Solidity for Ethereum Smart Contracts.
+
+### What is it?
+- Integration-tested data structure library
+
+### Why Vitruvius?
+- Smart contract dev is hard
+- Early stage, so data structures are hard / rare
+
+### Why not Vitruvius?
+- Higher order data structures are naturally more expensive
+- Incur higher gas costs during usage
+
+### Who uses Vitruvius?
+- Nobody atm
+
+### Why the name?
+- Named after Marcus *Vitruvius* Pollio, a Roman architect. He was one of the few who made structures before they were cool.
+
+## LICENSE
 MIT License
 
 Copyright (c) 2018 Gerald Nash

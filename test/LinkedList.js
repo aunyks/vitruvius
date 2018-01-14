@@ -1,4 +1,4 @@
-var LL = artifacts.require('LinkedList');
+let LL = artifacts.require('LinkedList');
 
 contract('LinkedList', (accounts) => {
     it('should deploy', () => {
