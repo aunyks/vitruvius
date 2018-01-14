@@ -16,7 +16,7 @@ Because these data structures are naturally complex, they're also naturally expe
 Nobody that [I](http://aunyks.com) know of uses Vitruvius at the moment. But, if you ever use Vitruvius contracts please let me know so that I can link to the project in place of this text!
 
 ### Why the name?
-The Vitruvius library is named after Marcus <ul>Vitruvius</ul> Pollio, a Roman architect. He was one of the few who made structures, before they were cool. And, in a similar manner, this library aims to serve as an early foundation and/or reference for implementing data structures in Solidity.
+The Vitruvius library is named after Marcus <u>Vitruvius</u> Pollio, a Roman architect. He was one of the few who made structures, before they were cool. And, in a similar manner, this library aims to serve as an early foundation and/or reference for implementing data structures in Solidity.
 
 ### Donate
 **0x037c241Baf5Ba2fa395db0Befac185e4E6b6608f**
