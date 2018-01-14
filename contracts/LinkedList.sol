@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract LinkedList {
 
-  event AddEntry(bytes32 head,uint number,string name,bytes32 next);
-  event RemoveEntry(bytes32 head,uint number,string name,bytes32 next);
+  event AddEntry(bytes32 head, uint number, string name, bytes32 next);
+  event RemoveEntry(bytes32 head, uint number, string name, bytes32 next);
 
   uint public length = 0; //also used as nonce
 
@@ -17,7 +17,6 @@ contract LinkedList {
   mapping (bytes32 => Object) public objects;
 
   function LinkedList() public {
-      
   }
 
   function addEntry(uint _number,string _name) public returns (bool) {
@@ -29,7 +28,8 @@ contract LinkedList {
     AddEntry(head,object.number,object.name,object.next);
   }
 
-  function removeEntry(bytes32 _id) public returns (bytes32, uint, string) {
+  function removeEntry(bytes32 _id) public returns (bool) {
+    require(length > 0);
     bytes32 current = head;
     while (current != 0 && current != _id && objects[current].next != _id) {
       current = objects[current].next;
@@ -48,10 +48,9 @@ contract LinkedList {
       // because this will soon be removed
       head = objects[_id].next;
     }
-    return (objects[_id].next, objects[_id].number, objects[_id].name);
+    length = length - 1;
     RemoveEntry(head, objects[_id].number, objects[_id].name, objects[_id].next);
     delete objects[_id];
-    length = length - 1;
   }
 
   //needed for external contract access to struct
