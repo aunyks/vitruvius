@@ -2,7 +2,7 @@
 Elementary data structures in Solidity for Ethereum Smart Contracts.
 
 ### What is it?
-Vitruvius is an integration-tested Solidity library that implements fundamental data structures in computing such as Linked Lists, Stacks, Heaps, Queues, etc.  
+Vitruvius is an integration-tested Solidity library that implements fundamental data structures in computing such as Linked Lists, Stacks, Queues, etc.  
 
 ### Data Structure Status
 
