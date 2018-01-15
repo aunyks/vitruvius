@@ -4,16 +4,13 @@ contract LinkedList {
 
   event AddEntry(bytes32 head, uint number, string name, bytes32 next);
   event RemoveEntry(bytes32 head, uint number, string name, bytes32 next);
-
-  uint public length = 0; //also used as nonce
-
+  uint public length = 0;
+  bytes32 public head;
   struct Object {
     bytes32 next;
     uint number;
     string name;
   }
-
-  bytes32 public head;
   mapping (bytes32 => Object) public objects;
 
   function LinkedList() public {
