@@ -16,16 +16,20 @@ contract('LinkedList', (accounts) => {
     it('returns an entry from an empty list', () => {
         return LL.deployed().then((instance) => {
             return instance.getEntry(5).then((entryData) => {
-                return entryData[0] === 0 && entryData[1].toString() === '0' && entryData[2] === ''
+                return (
+                    assert.equal(entryData[0], 0) &&
+                    assert.equal(entryData[1].toString(), '0') &&
+                    assert.equal(entryData[2], '')
+                )
             })
         })
     })
     it('successfully appends to a list', () => {
         return LL.deployed().then((instance) => {
             return instance.head.call().then((initialHead) => {
-                return instance.addEntry(5, 'cool-name').then((success) => {
+                return instance.addEntry(5, 'cool-name').then(() => {
                     return instance.head.call().then((newHead) => {
-                        return success && (newHead !== initialHead)
+                        return assert.notEqual(newHead, initialHead)
                     })
                 })
             })
@@ -36,8 +40,9 @@ contract('LinkedList', (accounts) => {
             return instance.head.call().then((initialHead) => {
                 return instance.addEntry(5, 'cool-name').then(() => {
                     return instance.head.call().then((newHead) => {
-                        return instance.removeEntry(newHead).then((oldEntry) => {
-                            return oldEntry[1] === 5 && oldEntry[2] === 'cool-name'
+                        return instance.removeEntry(newHead).then(() => {
+                            console.log('Find out how to test this better')
+                            return assert.equal(true, false)
                         })
                     })
                 })
@@ -53,8 +58,8 @@ contract('LinkedList', (accounts) => {
                             return instance.removeEntry(head).then(() => {
                                 return instance.length.call().then((removeLength) => {
                                     return (
-                                        assert.equal(initialLength.toString(), removeLength.toString())
-                                        && assert.notEqual(initialLength.toString(), appendLength.toString())
+                                        assert.equal(initialLength.toString(), removeLength.toString()) &&
+                                        assert.notEqual(initialLength.toString(), appendLength.toString())
                                     )
                                 })
                             })

@@ -8,8 +8,8 @@ Vitruvius is an integration-tested Solidity library that implements fundamental 
 
 | Structure  | To Be Added | Not Tested | Undergoing Tests | Done |
 | ------------- | :-----------: | :-----------: | :-----------: | :-----------: |
-| Linked List  | [ ] | [ ] | [ ] | [x] |
-| Stack  | [ ] | [ ] | [x] | [ ] |
+| Linked List  | [ ] | [ ] | [x] | [ ] |
+| Stack  | [ ] | [ ] | [ ] | [x] |
 | Queue  | [x] | [ ] | [ ] | [ ] |
 | Tree  | [x] | [ ] | [ ] | [ ] |
 

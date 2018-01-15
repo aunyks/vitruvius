@@ -1,8 +1,8 @@
 pragma solidity ^0.4.11;
 
 contract Stack {
-    event Popped(bytes32, uint, string);
-    event Pushed(bytes32, uint, string);
+    event Popped(bytes32 top, uint number, string name);
+    event Pushed(bytes32 top, uint number, string name);
     uint public height = 0;
     bytes32 public top;
     struct Object {
