@@ -8,65 +8,101 @@ contract('LinkedList', (accounts) => {
     })
     it('returns the initial list head', () => {
         return LL.deployed().then((instance) => {
-            return instance.head.call().then((head) => {
-                return head
-            })
+            return instance.head.call()
+                .then((head) => {
+                    return head
+                })
         })
     })
     it('returns an entry from an empty list', () => {
         return LL.deployed().then((instance) => {
-            return instance.getEntry(5).then((entryData) => {
-                return (
-                    assert.equal(entryData[0], 0) &&
-                    assert.equal(entryData[1].toString(), '0') &&
-                    assert.equal(entryData[2], '')
-                )
-            })
+            return instance.getEntry(5)
+                .then((entryData) => {
+                    return (
+                        assert.equal(entryData[0], 0) &&
+                        assert.equal(entryData[1].toString(), '0') &&
+                        assert.equal(entryData[2], '')
+                    )
+                })
         })
     })
     it('successfully appends to a list', () => {
+        let initialHead
+        let finalHead
         return LL.deployed().then((instance) => {
-            return instance.head.call().then((initialHead) => {
-                return instance.addEntry(5, 'cool-name').then(() => {
-                    return instance.head.call().then((newHead) => {
-                        return assert.notEqual(newHead, initialHead)
-                    })
+            return instance.head.call()
+                .then((firstHead) => {
+                    initialHead = firstHead
+                    return instance.addEntry(5, 'cool-name')
                 })
-            })
+                .then(() => {
+                    return instance.head.call()
+                })
+                .then((newHead) => {
+                    finalHead = newHead
+                    return assert.notEqual(finalHead, initialHead)
+                })
         })
     })
     it('successfully removes from end of a list', () => {
         return LL.deployed().then((instance) => {
-            return instance.head.call().then((initialHead) => {
-                return instance.addEntry(5, 'cool-name').then(() => {
-                    return instance.head.call().then((newHead) => {
-                        return instance.removeEntry(newHead).then(() => {
-                            console.log('Find out how to test this better')
-                            return assert.equal(true, false)
-                        })
-                    })
+            let initialHead
+            let secondHead
+            let finalHead
+            return instance.head.call()
+                .then((firstHead) => {
+                    initialHead = firstHead
+                    return instance.addEntry(5, 'cool-name')
                 })
-            })
+                .then(() => {
+                    return instance.head.call()
+                })
+                .then((newHead) => {
+                    secondHead = newHead
+                    return instance.removeEntry(newHead)
+                })
+                .then(() => {
+                    return instance.head.call()
+                })
+                .then((lastHead) => {
+                    finalHead = lastHead
+                    return (
+                        assert.equal(initialHead, finalHead) &&
+                        asset.notEqual(initialHead, secondHead)
+                    )
+                })
         })
     })
     it('correctly alters list length', () => {
         return LL.deployed().then((instance) => {
-            return instance.length.call().then((initialLength) => {
-                return instance.addEntry(1, 'second-node').then(() => {
-                    return instance.length.call().then((appendLength) => {
-                        return instance.head.call().then((head) => {
-                            return instance.removeEntry(head).then(() => {
-                                return instance.length.call().then((removeLength) => {
-                                    return (
-                                        assert.equal(initialLength.toString(), removeLength.toString()) &&
-                                        assert.notEqual(initialLength.toString(), appendLength.toString())
-                                    )
-                                })
-                            })
-                        })
-                    })
+            let initialLength
+            let appendedLength
+            let removedLength
+            return instance.length.call()
+                .then((firstLength) => {
+                    initialLength = firstLength
+                    return instance.addEntry(1, 'second-node')
                 })
-            })
+                .then(() => {
+                    return instance.length.call()
+                })
+                .then((appendLength) => {
+                    appendedLength = appendLength
+                    return instance.head.call()
+                })
+                .then((head) => {
+                    return instance.removeEntry(head)
+                })
+                .then(() => {
+                    return instance.length.call()
+                })
+                .then((removeLength) => {
+                    removedLength = removeLength
+                    return (
+                        assert.equal(initialLength.toString(), removedLength.toString()) &&
+                        assert.notEqual(initialLength.toString(), appendedLength.toString())
+                    )
+                })
         })
     })
     it('successfully removes from middle of a list', () => {
