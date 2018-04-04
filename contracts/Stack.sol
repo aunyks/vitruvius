@@ -30,6 +30,7 @@ contract Stack {
         bytes32 _top = top;
         top = objects[top].next;
         Popped(top, objects[_top].number, objects[_top].name);
+        height = height - 1;
         delete objects[_top];
     }
 }
